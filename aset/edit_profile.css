@@ -1,0 +1,166 @@
+/* Style Utama Form Full Desktop - Tema Monokrom (Hitam-Putih) */
+.profile-container {
+    padding: 30px;
+    width: 100%; /* Membuat kontainer memenuhi sisa layar dashboard */
+    box-sizing: border-box;
+}
+
+.profile-card {
+    background: #ffffff;
+    border-radius: 8px; /* Lebih tegas kotak tipikal minimalis */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    border: 1px solid #e2e8f0;
+}
+
+.profile-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000; /* Hitam Pekat */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.profile-subtitle {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 35px;
+}
+
+/* Membagi form menjadi 2 kolom di desktop agar tidak melar jelek */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+/* Bagian foto ditaruh di atas dengan row tersendiri */
+.form-avatar-section {
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px dashed #cbd5e1;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 5px;
+}
+
+/* Membuat alamat memakan 2 kolom penuh */
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: all 0.2s;
+    color: #000000;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #000000; /* Focus menjadi hitam */
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.form-control:disabled {
+    background-color: #f1f5f9;
+    color: #94a3b8;
+    cursor: not-allowed;
+    border-color: #e2e8f0;
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+/* Upload Style */
+.avatar-preview-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #000000;
+}
+
+input[type="file"].form-control {
+    background: #ffffff;
+}
+
+input[type="file"].form-control::file-selector-button {
+    background: #000000;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 12px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+input[type="file"].form-control::file-selector-button:hover {
+    background: #262626;
+}
+
+/* Tombol Aksi Hitam Putih */
+.btn-group {
+    grid-column: span 2;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.btn-submit {
+    background: #000000; /* Hitam */
+    color: #ffffff;
+    border: 1px solid #000000;
+}
+
+.btn-submit:hover {
+    background: #262626;
+}
+
+.btn-cancel {
+    background: #ffffff; /* Putih */
+    color: #000000;
+    border: 1px solid #cbd5e1;
+}
+
+.btn-cancel:hover {
+    background: #f8fafc;
+    border-color: #000000;
+}

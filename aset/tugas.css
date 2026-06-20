@@ -1,0 +1,239 @@
+/* ==========================================================================
+   LAYOUT UTAMA & JUDUL HALAMAN
+   ========================================================================== */
+
+.content {
+    padding: 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.content h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.section-title {
+    font-size: 14px;
+    font-weight: 800;
+    margin: 40px 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    letter-spacing: 1px;
+}
+
+.title-baru { 
+    color: #d97706; 
+    border-color: #fef3c7; 
+}
+
+.title-selesai { 
+    color: #059669; 
+    border-color: #d1fae5; 
+}
+
+
+/* ==========================================================================
+   GRID & SEGMEN KARTU TUGAS (TEMA LAMA)
+   ========================================================================== */
+
+.task-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.task-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 180px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.task-card:hover {
+    transform: translateY(-5px);
+    border-color: #000;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.task-card h4 {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.task-info p {
+    font-size: 13px;
+    color: #64748b;
+    margin: 5px 0;
+}
+
+.status-badge {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.status-badge.baru {
+    background: #fff7ed;
+    color: #c2410c;
+    border: 1px solid #ffedd5;
+}
+
+.status-badge.selesai {
+    background: #ecfdf5;
+    color: #047857;
+    border: 1px solid #d1fae5;
+}
+
+.task-footer {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-detail {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+/* ==========================================================================
+   GRID & KARTU MATA KULIAH (TEMA BARU - BLACK & WHITE DEFAULT)
+   ========================================================================== */
+
+/* Ditambahkan pembungkus grid khusus mata kuliah agar ukurannya presisi */
+.matkul-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 10px 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.matkul-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    /* PERBAIKAN: Wajib pakai relative agar posisi garis ::before mengunci di atas kartu */
+    position: relative; 
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.2s ease;
+}
+
+.matkul-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #e2e8f0;
+    transition: background 0.2s ease;
+}
+
+.matkul-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
+    border-color: #94a3b8;
+}
+
+/* Garis atas berubah menjadi hitam pekat saat di-hover */
+.matkul-card:hover::before {
+    background: #000000; 
+}
+
+.matkul-card-header {
+    padding: 24px 20px 15px 20px;
+    background: #ffffff;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.matkul-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.matkul-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0 0 8px 0;
+    display: inline-block;
+}
+
+/* Garis hitam rounded di bawah teks judul mata kuliah */
+.matkul-title::after {
+    content: '';
+    display: block;
+    height: 4px;
+    background: #000000;
+    border-radius: 10px;
+    margin-top: 6px;
+}
+
+.matkul-dosen {
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+.matkul-card-body {
+    padding: 20px;
+    font-size: 13px;
+    color: #334155;
+    flex: 1;
+    background: #ffffff;
+}
+
+.matkul-info-item {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    gap: 10px;
+}
+
+.matkul-info-item:last-child {
+    margin-bottom: 0;
+}
+
+.matkul-info-item strong {
+    color: #000000;
+    font-weight: 600;
+}
+
+.matkul-card-footer {
+    padding: 14px 20px;
+    background: #fafafa;
+    border-top: 1px solid #f1f5f9;
+    text-align: right;
+    font-size: 12px;
+    font-weight: 700;
+    color: #64748b;
+    transition: color 0.2s ease;
+}
+
+.matkul-card:hover .matkul-card-footer {
+    color: #000000;
+}
+
